@@ -1,19 +1,20 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  background-color: #fcd34d;
-  color: #991b1b;
+  background-color: #fde68a;
+  color: #92400e;
   font-family: "Satisfy", cursive;
-  border-radius: 2rem;
+  border-top-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
 }
 body {
-  background-color: #991b1b;
+  background-color: #92400e;
   padding: 2rem 2rem;
 }
 #btn {
-  background-color: #991b1b;
+  background-color: #92400e;
   color: white;
-  border: 2px solid #fcd34d;
+  border: 2px solid #92400e;
   font-family: "Satisfy", cursive;
   font-size: large;
   border-radius: 1rem;
