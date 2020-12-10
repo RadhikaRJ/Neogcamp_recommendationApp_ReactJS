@@ -1,36 +1,37 @@
 import React, { useState } from "react";
+
 import "./styles.css";
 
 export default function App() {
   const indianFood = {
     Punjabi: [
-      { name: "Makke Di Roti with Sarson Ka Saag", Type: "Meal" },
-      { name: "Aloo Paratha", Type: "Meal" },
-      { name: "Hara Bhara Kebab", Type: "Snack" },
-      { name: "Lassi", Type: "Snack" },
-      { name: "Gajar Halwa", Type: "Desert" }
+      { name: "Makke Di Roti with Sarson Ka Saag", Type: "9/10" },
+      { name: "Aloo Paratha", Type: "6/10" },
+      { name: "Hara Bhara Kebab", Type: "5/10" },
+      { name: "Lassi", Type: "8/10" },
+      { name: "Gajar Halwa", Type: "7/10" }
     ],
     Maharashtrian: [
-      { name: "Batata Wada", Type: "Snack" },
-      { name: "Masala Bhaat", Type: "Meal" },
-      { name: "Puran Poli", Type: "Meal" },
-      { name: "Ukdiche Modak", Type: "Dessert" },
-      { name: "Srikhand", Type: "Dessert" }
+      { name: "Batata Wada", Type: "6/10" },
+      { name: "Masala Bhaat", Type: "7/10" },
+      { name: "Puran Poli", Type: "9/10" },
+      { name: "Ukdiche Modak", Type: "8/10" },
+      { name: "Srikhand", Type: "9/10" }
     ],
     SouthIndian: [
-      { name: "Dosa Sambaar", Type: "Meal" },
-      { name: "Podi Idli", Type: "Snack" },
-      { name: "Wada Sambaar", Type: "Snack" },
-      { name: "Uttapam", Type: "Meal" },
-      { name: "Mysore Masala Dosa", Type: "Meal" }
+      { name: "Dosa Sambaar", Type: "7/10" },
+      { name: "Podi Idli", Type: "6/10" },
+      { name: "Wada Sambaar", Type: "7/10" },
+      { name: "Uttapam", Type: "8/10" },
+      { name: "Mysore Masala Dosa", Type: "9/10" }
     ],
     StreetFood: [
-      { name: "Pani Puri", Type: "Snack" },
-      { name: "Vada Pav", Type: "Snack" },
-      { name: "Paav Bhaji", Type: "Meal" },
-      { name: "Cut Dosa", Type: "Meal" },
-      { name: "Bhel", Type: "Snack" },
-      { name: "Kulfi", Type: "Desert" }
+      { name: "Pani Puri", Type: "10/10" },
+      { name: "Vada Pav", Type: "9/10" },
+      { name: "Paav Bhaji", Type: "9/10" },
+      { name: "Cut Dosa", Type: "8/10" },
+      { name: "Bhel", Type: "8/10" },
+      { name: "Kulfi", Type: "9/10" }
     ]
   };
 
@@ -39,14 +40,21 @@ export default function App() {
 
   var [clickedCuisine, selectedCuisine] = useState("StreetFood");
   var selectedMenu = indianFood[clickedCuisine];
-
+  var bgcolor = "white";
   //console.log("selected Menu: ", selectedMenu);
+
+  function setlibgcolor(index) {
+    if (index % 2 === 0) {
+      bgcolor = "#FEF3C7";
+    }
+    bgcolor = "#FEE2E2";
+  }
 
   return (
     <div className="App">
-      <h2>Snack Or Meal?</h2>
-      <h1>How Hungry Are You ?</h1>
-      <h3>Click to view my recommendations!</h3>
+      <h1>Hungry ?</h1>
+      <h3>Pick one of my Recommendations!</h3>
+
       <div>
         {cuisines.map((item) => {
           return (
@@ -65,7 +73,7 @@ export default function App() {
       <ul>
         {
           //console.log(indianFood[clickedCuisine])
-          selectedMenu.map((item) => {
+          selectedMenu.map((item, index) => {
             return (
               <li
                 id="list"
@@ -73,13 +81,16 @@ export default function App() {
                 key={item.name}
                 style={{ margin: "1rem" }}
               >
-                <em>{item.name} </em>
-                <small> ({item.Type})</small>
+                {item.name}
+
+                <br></br>
+                <small> rating: ({item.Type})</small>
               </li>
             );
           })
         }
       </ul>
+      <br></br>
     </div>
   );
 }

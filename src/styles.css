@@ -1,20 +1,20 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  background-color: #fde68a;
-  color: #92400e;
+  background-color: #4b5563;
+  color: white;
   font-family: "Satisfy", cursive;
   border-top-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
 }
 body {
-  background-color: #92400e;
+  background-color: #111827;
   padding: 2rem 2rem;
 }
 #btn {
-  background-color: #92400e;
+  background-color: #1f2937;
   color: white;
-  border: 2px solid #92400e;
+  border: 2px solid #1f2937;
   font-family: "Satisfy", cursive;
   font-size: large;
   border-radius: 1rem;
@@ -22,5 +22,4 @@ body {
 #list {
   font-family: "Cinzel", serif;
   font-size: x-large;
-  padding: 1rem;
 }
